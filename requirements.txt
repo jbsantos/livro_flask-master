@@ -1,9 +1,3 @@
-alembic
-apt-clone
-apturl
-asn1crypto
-backcall
-beautifulsoup
 Brlapi==0.6.6
 certifi==2018.1.18
 cffi==1.12.3
