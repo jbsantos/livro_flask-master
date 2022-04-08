@@ -3,9 +3,9 @@ from flask import Flask, request, redirect, render_template, Response, json, abo
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager, login_user, logout_user
-
+from model.User import User
 from functools import wraps
-
+from passlib.hash import pbkdf2_sha256
 # config import
 from config import app_config, app_active
 
@@ -69,9 +69,16 @@ def create_app(config_name):
 
     @app.route('/login/', methods=['POST'])
     def login_post():
+        print('chegou')
         user = UserController()
-
+        # for a in User.get_password():
+        #     print('1')
+        # password = request.form['password']
+        # senha = pbkdf2_sha256.hash(password)
+        # print(senha)
+        # exit()
         email = request.form['email']
+
         password = request.form['password']
 
         result = user.login(email, password)
@@ -170,12 +177,14 @@ def create_app(config_name):
 
     @app.route('/login_api/', methods=['POST'])
     def login_api():
+
         header = {}
         user = UserController()
 
         email = request.json['email']
+        print(email)
         password = request.json['password']
-
+        print(password)
         result = user.login(email, password)
         code = 401
         response = {"message": "Usuário não autorizado", "result": []}

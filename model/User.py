@@ -25,6 +25,8 @@ class User(db.Model, UserMixin):
     
     def __repr__(self):
         return '%s - %s' % (self.id, self.username)
+    def get_password():
+        return User.query.all()
 
     def get_user_by_email(self):
         try:
