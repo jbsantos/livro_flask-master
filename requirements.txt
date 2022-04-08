@@ -1,4 +1,4 @@
-alembic==1.0.11
+#alembic==1.0.11
 apt-clone==0.2.1
 apturl==0.5.2
 asn1crypto==0.24.0
