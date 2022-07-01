@@ -25,11 +25,11 @@ class TestingConfig(Config):
     URL_MAIN = 'http://%s:%s/' % (IP_HOST, PORT_HOST)
 
 class ProductionConfig(Config):
-    DEBUG = False
-    TESTING = False
+    DEBUG = True
+    TESTING = True
     IP_HOST = 'us-cdbr-east-06.cleardb.net/heroku_4722f6254911c8e?reconnect=true' # Aqui geralmente é um IP de um servidor na nuvem e não o endereço da máquina local
-    PORT_HOST = 8080
-    URL_MAIN = 'http://%s:%s/' % (IP_HOST, PORT_HOST)
+     
+    URL_MAIN = 'http://%s:%s/' % (IP_HOST)
 
 app_config = {
     'development': DevelopmentConfig(),
