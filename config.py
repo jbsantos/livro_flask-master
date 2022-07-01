@@ -7,7 +7,7 @@ class Config(object):
     TEMPLATE_FOLDER = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
     ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
     APP = None
-    SQLALCHEMY_DATABASE_URI = 'mysql+mysqldb://b6c6eeb1000cde:3897b760@us-cdbr-east-06.cleardb.net/heroku_4722f6254911c8e?reconnect=true:3306/livro_flask'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://b6c6eeb1000cde:3897b760@us-cdbr-east-06.cleardb.net/heroku_4722f6254911c8e?reconnect=true:3306/livro_flask'
     SENDGRID_API_KEY = 'API_KEY'
 
 class DevelopmentConfig(Config):
