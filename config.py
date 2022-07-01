@@ -13,21 +13,21 @@ class Config(object):
 class DevelopmentConfig(Config):
     TESTING = False
     DEBUG = True
-    IP_HOST = 'localhost'
+    IP_HOST = 'us-cdbr-east-06.cleardb.net/heroku_4722f6254911c8e?reconnect=true'
     PORT_HOST = 8001
     URL_MAIN = 'http://%s:%s/' % (IP_HOST, PORT_HOST)
 
 class TestingConfig(Config):
     TESTING = True
     DEBUG = True
-    IP_HOST = 'localhost' # Aqui geralmente é um IP de um servidor na nuvem e não o endereço da máquina local
+    IP_HOST = 'us-cdbr-east-06.cleardb.net/heroku_4722f6254911c8e?reconnect=true' # Aqui geralmente é um IP de um servidor na nuvem e não o endereço da máquina local
     PORT_HOST = 5000
     URL_MAIN = 'http://%s:%s/' % (IP_HOST, PORT_HOST)
 
 class ProductionConfig(Config):
     DEBUG = False
     TESTING = False
-    IP_HOST = 'localhost' # Aqui geralmente é um IP de um servidor na nuvem e não o endereço da máquina local
+    IP_HOST = 'us-cdbr-east-06.cleardb.net/heroku_4722f6254911c8e?reconnect=true' # Aqui geralmente é um IP de um servidor na nuvem e não o endereço da máquina local
     PORT_HOST = 8080
     URL_MAIN = 'http://%s:%s/' % (IP_HOST, PORT_HOST)
 
@@ -37,4 +37,5 @@ app_config = {
     'production': ProductionConfig()
 }
 
-app_active = os.getenv('FLASK_ENV')
+#app_active = os.getenv('FLASK_ENV')
+app_active = 'production'
